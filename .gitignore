@@ -1,0 +1,4 @@
+.pdm-python
+.venv
+.ropeproject
+__pycache__
