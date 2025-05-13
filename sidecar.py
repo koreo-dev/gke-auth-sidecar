@@ -59,6 +59,7 @@ def main():
     while True:
         try:
             token = fetch_token()
+            logging.info("Fetched token ending with: %s", token[-6:])
             write_kubeconfig(endpoint, ca_cert, token, kubeconfig_path)
         except Exception as e:
             logging.exception("Failed to refresh kubeconfig")
