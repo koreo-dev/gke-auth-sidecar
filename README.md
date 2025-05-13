@@ -7,9 +7,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: external-k8s
-  namespace: skybit-systems-dev
 spec:
-  serviceAccountName: dev-workload-ksa
+  serviceAccountName: external-k8s
   containers:
     - name: app
       image: python:3.11
@@ -27,13 +26,13 @@ spec:
         - name: GKE_CLUSTER_ENDPOINT
           valueFrom:
             secretKeyRef:
-              name: dev
-              key: endpoint
+              name: clusterConfig
+              key: endpoint # expects https://1.2.3.4
         - name: GKE_CLUSTER_CA
           valueFrom:
             secretKeyRef:
-              name: dev
-              key: ca.crt
+              name: clusterConfig
+              key: ca.crt # expects certificate
         - name: KUBECONFIG_PATH
           value: /kube/config
       volumeMounts:

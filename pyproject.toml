@@ -10,3 +10,9 @@ license = { text = "Apache-2.0" }
 
 [tool.pdm]
 distribution = false
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+    "black>=25.1.0",
+]
