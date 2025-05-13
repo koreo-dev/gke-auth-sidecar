@@ -22,7 +22,7 @@ spec:
           value: /kube/config
 
     - name: sidecar-auth
-      image: us-docker.pkg.dev/koreo-dev/koreo-dev/gke-auth-sidecar:latest # Built from the Dockerfile we discussed
+      image: us-docker.pkg.dev/koreo-dev/koreo-dev/gke-auth-sidecar:latest
       env:
         - name: GKE_CLUSTER_ENDPOINT
           valueFrom:
